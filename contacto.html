@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de contacto</title>
+    <link rel="stylesheet" href="estiloform.css">
 </head>
 <body>
-    <p>hola</p>
+    <h1>Formulario de Contacto</h1>
+    <form class="Contactform">
+        <h2>Ingresar datos</h2>
+        <div>
+            <label>Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="email">Correo Electronico:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono" maxlength="10" required>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    <div id="result"></div>
+
 </body>
 </html>
