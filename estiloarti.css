@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    color: white;
+}
+
+body{
+    margin: 0 auto;
+    max-width: 1500px;
+    color: black;
+}
+
+.icon-cart{
+    width: 40px;
+    height: 40px;
+}
+
+img{
+    width: 100%;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 60px;
+    padding: 0px 40px;
+    background-color: black;
+}
+
+.logo{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.item{
+    border-radius: 10px;
+}
+
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.item:hover img{
+    transform: scale(1,2);
+}
+
+.item figure{
+    overflow: hidden;
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.contenedor-productos{
+    display: flex;
+    gap: 10px;
+    padding: 30px 10px;
+    background-image: url(img/imagendefondo1.jpg);
+}
+
+.info{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.precio{
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.info button{
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+
+

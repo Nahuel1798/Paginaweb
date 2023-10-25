@@ -2,19 +2,20 @@
     margin: 0px;
     padding: 0%;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+
 h1{
     width: 100%;
     font-size: 60px;
-    padding: 0px 60px;
+    padding: 30px 60px;
 }
 p{
     width: 100%;
     font-size: 28px;
     padding: 20px 60px;
 }
+
 
 .menu{
     display: flex;
@@ -45,9 +46,9 @@ ul{
     position: relative;
     width: 100%;
     height: 68vh;
-    min-height: 850px;
+    min-height: 900px;
     background-color: white;
-    background-image: url(img/imagendefondo.jpg);
+    background-image: url(img/imagendefondo1.jpg);
     background-size: cover;
     background-position: center top;
 }
@@ -68,11 +69,11 @@ ul{
     display: flex;
     align-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1000px;
     height: 100%;
 }
 
-.contenedor-texto{
+.contenido-texto{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -81,14 +82,27 @@ ul{
     text-align: center;
 }
 
+.contenido-texto button{
+    margin-top: 40px;
+    padding: 15px 90px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 40px;
+    background-color: black;
+}
+
+.contenido-texto button:hover{
+    background-color: gray;
+}
+
 .contenedor-slider
 {
     display: flex;
     align-items: center;
     gap: 40px;
     max-width: 1400px;
-    padding: 50px 10px;
-    
+    padding: 60px 10px;
 }
 
 .botton{
@@ -105,13 +119,13 @@ ul{
 }
 
 .botton:hover{
-    background: blue;
+    background: gray;
 }
 
 .slider-screen
 {
     width: 90%;
-    box-shadow: 0 0 0 10px black,
+    box-shadow: 0 0 0 10px white,
                 0 15px 50px;
 }
 
