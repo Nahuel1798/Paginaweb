@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de contacto</title>
-    <link rel="stylesheet" href="estiloform.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <nav>
@@ -19,78 +19,81 @@
             </ul>
         </div>
     </nav>
-  <section class="seccion-uno">
-    <form class="Contactform" id="contactForm" onsubmit="return validar();">
-      <h4>Formulario de Contacto</h4>
-        <div class="controls">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required maxlength="50">
+    <section class="seccion-uno">
+        <div class="seccion-dos-hijo">
+            <form class="Contactform" id="contactForm" onsubmit="return validar();">
+                <h4>Formulario de Contacto</h4>
+                <div class="controls">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required maxlength="50">
+                </div>
+                <div class="controls">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="controls">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required maxlength="200"></textarea>
+                </div>
+                <button type="submit" class="botons">Enviar</button>
+            </form>
+    
+            <div class="mensajeEnviado" id="mensajeEnviado" style="display: none;">
+                <h2>Datos Enviados:</h2>
+                <p><strong>Nombre:</strong> <span id="mostrarNombre"></span></p>
+                <p><strong>Correo Electrónico:</strong> <span id="mostrarEmail"></span></p>
+                <p><strong>Mensaje:</strong> <span id="mostrarMensaje"></span></p>
+            </div>
+    
+            <div id="errores" style="color: red;"></div>
+    
+            <script>
+                function validar() {
+                    const contactForm = document.getElementById('contactForm');
+                    const mensajeEnviado = document.getElementById('mensajeEnviado');
+                    const mostrarNombre = document.getElementById('mostrarNombre');
+                    const mostrarEmail = document.getElementById('mostrarEmail');
+                    const mostrarMensaje = document.getElementById('mostrarMensaje');
+                    const errores = document.getElementById('errores');
+    
+                    // Resetear los mensajes de error
+                    errores.innerHTML = '';
+                    errores.style.display = 'none';
+    
+                    // Obtener los valores de los campos
+                    const nombre = document.getElementById('nombre').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const mensaje = document.getElementById('mensaje').value.trim();
+    
+                    // Validaciones
+                    if (nombre === '' || email === '' || mensaje === '') {
+                        errores.innerHTML = 'Todos los campos son obligatorios.';
+                        errores.style.display = 'block';
+                        return false;
+                    } else if (nombre.length > 50) {
+                        errores.innerHTML = 'El nombre no puede exceder los 50 caracteres.';
+                        errores.style.display = 'block';
+                        return false;
+                    } else if (mensaje.length > 200) {
+                        errores.innerHTML = 'El mensaje no puede exceder los 200 caracteres.';
+                        errores.style.display = 'block';
+                        return false;
+                    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                        errores.innerHTML = 'El correo electrónico no es válido.';
+                        errores.style.display = 'block';
+                        return false;
+                    } else {
+                        // Mostrar los datos enviados
+                        mostrarNombre.textContent = nombre;
+                        mostrarEmail.textContent = email;
+                        mostrarMensaje.textContent = mensaje;
+                        mensajeEnviado.style.display = 'block';
+                        return false;
+                    }
+                }
+            </script>
         </div>
-        <div class="controls">
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="controls">
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required maxlength="200"></textarea>
-        </div>
-        <button type="submit" class="botons">Enviar</button>
-    </form>
-
-    <div class="mensajeEnviado" id="mensajeEnviado" style="display: none;">
-        <h2>Datos Enviados:</h2>
-        <p><strong>Nombre:</strong> <span id="mostrarNombre"></span></p>
-        <p><strong>Correo Electrónico:</strong> <span id="mostrarEmail"></span></p>
-        <p><strong>Mensaje:</strong> <span id="mostrarMensaje"></span></p>
-    </div>
-
-    <div id="errores" style="color: red;"></div>
-
-    <script>
-        function validar() {
-            const contactForm = document.getElementById('contactForm');
-            const mensajeEnviado = document.getElementById('mensajeEnviado');
-            const mostrarNombre = document.getElementById('mostrarNombre');
-            const mostrarEmail = document.getElementById('mostrarEmail');
-            const mostrarMensaje = document.getElementById('mostrarMensaje');
-            const errores = document.getElementById('errores');
-
-            // Resetear los mensajes de error
-            errores.innerHTML = '';
-            errores.style.display = 'none';
-
-            // Obtener los valores de los campos
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const mensaje = document.getElementById('mensaje').value.trim();
-
-            // Validaciones
-            if (nombre === '' || email === '' || mensaje === '') {
-                errores.innerHTML = 'Todos los campos son obligatorios.';
-                errores.style.display = 'block';
-                return false;
-            } else if (nombre.length > 50) {
-                errores.innerHTML = 'El nombre no puede exceder los 50 caracteres.';
-                errores.style.display = 'block';
-                return false;
-            } else if (mensaje.length > 200) {
-                errores.innerHTML = 'El mensaje no puede exceder los 200 caracteres.';
-                errores.style.display = 'block';
-                return false;
-            } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-                errores.innerHTML = 'El correo electrónico no es válido.';
-                errores.style.display = 'block';
-                return false;
-            } else {
-                // Mostrar los datos enviados
-                mostrarNombre.textContent = nombre;
-                mostrarEmail.textContent = email;
-                mostrarMensaje.textContent = mensaje;
-                mensajeEnviado.style.display = 'block';
-                return false;
-            }
-        }
-    </script>
-  </section>
+        
+    </section>
 </body>
 </html>

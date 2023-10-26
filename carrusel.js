@@ -1,7 +1,9 @@
-var imagenes = ["img/imagen1.jpg",
-                "img/imagen2.jpg",
+var imagenes = ["img/imagen6.jpg",
+                "img/imagen7.jpg",
                 "img/imagen3.jpg",
-                "img/imagen4.jpg"
+                "img/imagen4.jpg",
+                "img/imagen8.jpg",
+                "img/imagen10.jpg"
                ];
 
 document.Imagen.src = imagenes[0];

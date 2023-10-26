@@ -1,3 +1,4 @@
+/*para todos*/
 *{
     margin: 0px;
     padding: 0%;
@@ -16,7 +17,7 @@ p{
     padding: 20px 60px;
 }
 
-
+/*menu de las tres paginas*/
 .menu{
     display: flex;
     justify-content: space-between;
@@ -26,6 +27,7 @@ p{
     height: 60px;
     padding: 0px 40px;
     background-color: black;
+    
 }
 
 .logo{
@@ -42,17 +44,18 @@ ul{
     list-style: none;
 }
 
+/*visual del fondo*/
 .seccion-uno{
     position: relative;
     width: 100%;
-    height: 68vh;
+    height: 200vh;
     min-height: 900px;
     background-color: white;
-    background-image: url(img/imagendefondo1.jpg);
+    background-image: url(img/imagenfondo3.jpg);
     background-size: cover;
     background-position: center top;
 }
-
+/*----------------*/
 .seccion-uno-hijo{
     display: flex;
     justify-content: center;
@@ -65,6 +68,21 @@ ul{
     left: 0px;
 }
 
+.seccion-dos-hijo{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.seccion-tres-hijo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*---------------*/
+
+/*Pagina 1 index*/
 .contenedor-contenido{
     display: flex;
     align-content: space-between;
@@ -122,15 +140,144 @@ ul{
     background: gray;
 }
 
-.slider-screen
-{
-    width: 90%;
-    box-shadow: 0 0 0 10px white,
+.slider-screen{
+    width: 100%;
+    
+}
+
+.slider-screen img{
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+/*pagina 2 Contacto*/
+.Contactform{
+    width: 600px;
+    
+    padding: 20px 40px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    box-shadow: 0 0 0 10px black,
                 0 15px 50px;
 }
 
-.slider-screen img
-{
+.Contactform h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls{
     width: 100%;
-    display: block;
+    background-color: black;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.Contactform label{
+    display: flex;
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.Contactform input{
+    width: 100%;
+    padding: 5px 3px;
+    background-color: white;
+    font-size: 22px;
+}
+
+.Contactform textarea{
+    height: 130px;
+    width: 100%;
+    font-size: 22px;
+    line-height: 40px;
+    color: black;
+}
+
+.botons{
+    width: 100%;
+    background: black;
+    border: none;
+    padding: 12px 0px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botons:hover{
+    background: gray;
+}
+
+.mensajeEnviado{
+    background-color: black
+}
+
+/*pagina 3 Articulos*/
+img{
+    width: 100%;
+}
+
+.item{
+    border-radius: 10px;
+    width: 350px;
+}
+
+.item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.item:hover img{
+    transform: scale(1,2);
+}
+
+.item figure{
+    overflow: hidden;
+}
+
+.item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.contenedor-productos{
+    display: flex;
+    width: 400%;
+    height: 100%;
+    gap: 10px;
+    padding: 30px 10px;
+}
+
+.info{
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.precio{
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.info button{
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
 }
