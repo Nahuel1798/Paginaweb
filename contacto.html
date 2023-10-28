@@ -86,32 +86,42 @@
                     const mensaje = document.getElementById('mensaje').value.trim();
     
                     // Validaciones
-                    if (nombre === "" || email === "" || mensaje === "" || telefono === "") {
+                    if (nombre === "") {
                         errorNombre.innerHTML = "Todos los campos son obligatorios.";
-                        errorMail.innerHTML = "Todos los campos son obligatorios.";
-                        errorTelefono.innerHTML = "Todos los campos son obligatorios.";
-                        errorMensaje.innerHTML = "Todos los campos son obligatorios.";
                         errorNombre.style.display = 'block';
+                    }
+
+                    if (email === "") {
+                        errorMail.innerHTML = "Todos los campos son obligatorios.";
                         errorMail.style.display = 'block';
+                    }
+
+                    if (telefono === "") {
+                        errorTelefono.innerHTML = "Todos los campos son obligatorios.";
                         errorTelefono.style.display = 'block';
+                    }
+                    
+                    if (mensaje === "") {
+                        errorMensaje.innerHTML = "Todos los campos son obligatorios.";
                         errorMensaje.style.display = 'block';
-                        return false;
-                    } else if (nombre.length > 20) {
+                    }
+
+                    if (nombre.length > 20) {
                         errorNombre.innerHTML = 'El nombre no puede exceder los 20 caracteres.';
                         errorNombre.style.display = 'block';
                         return false;
-                    } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-                        errorMail.innerHTML = 'El correo electrónico no es válido.';
-                        errorMail.style.display = 'block';
-                        return false;
-                    } else if (mensaje.length > 200) {
-                        errorMensaje.innerHTML = 'El mensaje no puede exceder los 200 caracteres.';
-                        errorMensaje.style.display = 'block';
-                        return false;
-                    }else if (!/^\d{10}$/.test(telefono)) {
-                        errorTelefono.innerHTML = 'El numero tiene que tener 10 numeros';
-                        errorTelefono.style.display = 'block';
-                        return false;
+                        }else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                            errorMail.innerHTML = 'El correo electrónico no es válido.';
+                            errorMail.style.display = 'block';
+                            return false;
+                        }else if (mensaje.length > 200) {
+                            errorMensaje.innerHTML = 'El mensaje no puede exceder los 200 caracteres.';
+                            errorMensaje.style.display = 'block';
+                            return false;
+                        }else if (!/^\d{10}$/.test(telefono)) {
+                            errorTelefono.innerHTML = 'El numero tiene que tener 10 numeros';
+                            errorTelefono.style.display = 'block';
+                            return false;
                     } else {
                         // Mostrar los datos enviados
                         mostrarNombre.textContent = nombre;
