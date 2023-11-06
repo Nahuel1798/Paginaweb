@@ -87,23 +87,27 @@
     
                     // Validaciones
                     if (nombre === "") {
-                        errorNombre.innerHTML = "Todos los campos son obligatorios.";
+                        errorNombre.innerHTML = "El nombre es obligatorios.";
                         errorNombre.style.display = 'block';
+                        return false;
                     }
 
                     if (email === "") {
-                        errorMail.innerHTML = "Todos los campos son obligatorios.";
+                        errorMail.innerHTML = "El correo es obligatorios.";
                         errorMail.style.display = 'block';
+                        return false;
                     }
 
                     if (telefono === "") {
-                        errorTelefono.innerHTML = "Todos los campos son obligatorios.";
+                        errorTelefono.innerHTML = "El telefono es obligatorios.";
                         errorTelefono.style.display = 'block';
+                        return false;
                     }
                     
                     if (mensaje === "") {
-                        errorMensaje.innerHTML = "Todos los campos son obligatorios.";
+                        errorMensaje.innerHTML = "El mensaje es obligatorios.";
                         errorMensaje.style.display = 'block';
+                        return false;
                     }
 
                     if (nombre.length > 20) {
